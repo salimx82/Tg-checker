@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: telegram-checker-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: SESSION_NAME
+        value: telegram_checker
+      - key: CHECK_LIMIT
+        value: "150"
